@@ -1,10 +1,10 @@
+//girilen 4 basamakli bir sayiyi sifreleme programi
+// suna göre sifreler: abcd sayisi [(c+6)%10][(d+6)%10][(a+6)%10][(b+6)%10] islemleri yapilarak ekrana yazdirir.
 package nypodev3_ilksoru_ilkoncul;
 
 import java.util.Scanner;
-
-/*
- @author Aysegul
- */
+// @author Aysegul
+ 
 public class NypOdev3_IlkSoru_IlkOncul {
 
     public static void main(String[] args) {
@@ -21,9 +21,6 @@ public class NypOdev3_IlkSoru_IlkOncul {
                 orjinalSayi /= 10;
             }
             System.out.println(array[1] + "" + array[0] + array[3] + array[2]);
-
         }
-
     }
-
 }
