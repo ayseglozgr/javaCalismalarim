@@ -1,9 +1,8 @@
 
 package nyplab3;
-/**
- *
- * @author Aysegul
- */
+
+//@author Aysegul
+ 
 public class palindromiksayi 
 {
     public static void main(String [] args)
