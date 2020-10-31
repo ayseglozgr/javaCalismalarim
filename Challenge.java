@@ -1,37 +1,38 @@
+package ornek;
 
-package circleclass;
+import java.util.Scanner;
 import java.util.Scanner;
 
+class Challenge {
 
-public class Challenge {
-
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        int sum = 0;
-        System.out.println("Enter radius:");
-        double rad = scanner.nextDouble();
-        System.out.println("Enter color:");
-        String col = scanner.next();
+        Author aut;
 
-        MyCircle mc = new MyCircle(rad, col);
+        System.out.println("Enter name:");
+        String somename = scanner.nextLine();
 
-        System.out.println(mc.getArea());
-        System.out.println(mc.color);
-    }
-}
-class MyCircle {
+        System.out.println("Enter email:");
+        String semail = scanner.nextLine();
 
-    public double rad;
-    public String color;
+        System.out.println("Enter book name:");
+        String sbook = scanner.nextLine();
 
-    public MyCircle(double rad, String color) {
-        this.rad = rad;
-        this.color = color;
-    }
+        aut = new Author(somename, semail, sbook);
 
-    public double getArea() {
-
-        return Math.PI * rad * rad;
+        System.out.println(aut.somename + "\n" + aut.semail + "\n" + aut.sbook);
     }
 }
 
+class Author {
+
+    public String somename;
+    public String semail;
+    public String sbook;
+
+    public Author(String name, String semail, String sbook) {
+        this.somename = name;
+        this.semail = semail;
+        this.sbook = sbook;
+    }
+}
