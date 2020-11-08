@@ -1,58 +1,57 @@
 
+package challengee;
+
 import java.util.Scanner;
 
 class Challenge {
 
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter day:");
-        int day = scanner.nextInt();
-        System.out.println("Enter month:");
-        int month = scanner.nextInt();
-        System.out.println("Enter year:");
-        int year = scanner.nextInt();
-        Date d = new Date(day, month, year);
-        d.DisplayDate();
-    }
-}
 
-class Date {
-
-    private int day;
-    private int month;
-    private int year;
-
-    public Date(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        System.out.print("Enter the radius:");
+        double radius = scanner.nextDouble();
+        new Challenge().method(radius);
     }
 
-    public void DisplayDate() {
-        System.out.println(getDay() + "/" + getMonth() + "/" + getYear());
+    public void method(double radius) {
+
+        Circle myCircle = new Circle();
+        myCircle.setradius(radius);
+        System.out.print(myCircle.getDisplayText());
     }
 
-    public int getDay() {
-        return day;
+    public abstract class CircleShape {
+
+        public double radius;
+
+        public CircleShape() {
+        }
+
+        public CircleShape(double radius) {
+            this.radius = radius;
+        }
+
+        public void setradius(double radius) {
+            this.radius = radius;
+        }
+
+        public String toString() {
+            return "Radius " + radius;
+        }
+
+        abstract String getDisplayText();
     }
 
-    public void setDay(int day) {
-        this.day = day;
-    }
+    public class Circle extends CircleShape {
 
-    public int getMonth() {
-        return month;
-    }
+        private double area;
 
-    public void setMonth(int month) {
-        this.month = month;
-    }
+        public double area() {
+            return radius * radius * 3.14;
+        }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+        public String getDisplayText() {
+            return ("Radius " + radius + " and Area is " + area());
+        }
     }
 }
