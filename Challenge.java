@@ -1,38 +1,43 @@
-package ornek;
+package quadrantpoint;
 
 import java.util.Scanner;
-import java.util.Scanner;
 
-class Challenge {
+public class Challenge {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Author aut;
 
-        System.out.println("Enter name:");
-        String somename = scanner.nextLine();
-
-        System.out.println("Enter email:");
-        String semail = scanner.nextLine();
-
-        System.out.println("Enter book name:");
-        String sbook = scanner.nextLine();
-
-        aut = new Author(somename, semail, sbook);
-
-        System.out.println(aut.somename + "\n" + aut.semail + "\n" + aut.sbook);
+        System.out.println("Enter x coordinate:");
+        int num1 = scanner.nextInt();
+        System.out.println("Enter y coordinate:");
+        int num2 = scanner.nextInt();
+        Point point = new Point(num1, num2);
+        System.out.println("Quadrant " + point.quadrant());
     }
+
 }
 
-class Author {
+class Point {
 
-    public String somename;
-    public String semail;
-    public String sbook;
+    public int x;
+    public int y;
 
-    public Author(String name, String semail, String sbook) {
-        this.somename = name;
-        this.semail = semail;
-        this.sbook = sbook;
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int quadrant() {
+        if (x > 0 && y > 0) {
+            return 1;
+        } else if (x < 0 && y > 0) {
+            return 2;
+        } else if (x < 0 && y < 0) {
+            return 3;
+        } else if (x > 0 && y < 0) {
+            return 4;
+        } else {
+            return 0;
+        }
     }
 }
