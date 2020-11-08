@@ -1,75 +1,58 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package employee;
 
 import java.util.Scanner;
 
-public class Challenge {
+class Challenge {
 
-    public static void main(String[] args) {
-
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter first name:");
-        String first = scanner.nextLine();
-        System.out.println("Enter last name:");
-        String last = scanner.nextLine();
-        System.out.println("Enter monthly salary:");
-        double salary = scanner.nextDouble();
-        Employee e1 = new Employee(first, last, salary);
-
-        System.out.println("First name:" + e1.getFirst());
-        System.out.println("Last name:" + e1.getLast());
-        System.out.println("Salary:" + e1.getSalary());
+        System.out.println("Enter day:");
+        int day = scanner.nextInt();
+        System.out.println("Enter month:");
+        int month = scanner.nextInt();
+        System.out.println("Enter year:");
+        int year = scanner.nextInt();
+        Date d = new Date(day, month, year);
+        d.DisplayDate();
     }
-
 }
 
-class Employee {
+class Date {
 
-    private String first;
-    private String last;
-    private double salary;
+    private int day;
+    private int month;
+    private int year;
 
-    public Employee(String first, String last, Double salary) {
-        this.first = first;
-        this.last = last;
-        if (salary < 0) {
-            this.salary = 0;
-        } else {
-            this.salary = salary;
-
-        }
+    public Date(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
     }
 
-    public String getFirst() {
-        return first;
+    public void DisplayDate() {
+        System.out.println(getDay() + "/" + getMonth() + "/" + getYear());
     }
 
-    public void setFirst(String first) {
-        this.first = first;
+    public int getDay() {
+        return day;
     }
 
-    public String getLast() {
-        return last;
+    public void setDay(int day) {
+        this.day = day;
     }
 
-    public void setLast(String last) {
-        this.last = last;
+    public int getMonth() {
+        return month;
     }
 
-    public double getSalary() {
-        return salary;
-
+    public void setMonth(int month) {
+        this.month = month;
     }
 
-    public void setSalary(double salary) {
-        if (salary < 0) {
-            this.salary = 0;
-        } else {
-            this.salary = salary;
-        }
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
