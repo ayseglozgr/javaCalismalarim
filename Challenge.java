@@ -1,43 +1,75 @@
-package quadrantpoint;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package employee;
 
 import java.util.Scanner;
 
 public class Challenge {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter x coordinate:");
-        int num1 = scanner.nextInt();
-        System.out.println("Enter y coordinate:");
-        int num2 = scanner.nextInt();
-        Point point = new Point(num1, num2);
-        System.out.println("Quadrant " + point.quadrant());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter first name:");
+        String first = scanner.nextLine();
+        System.out.println("Enter last name:");
+        String last = scanner.nextLine();
+        System.out.println("Enter monthly salary:");
+        double salary = scanner.nextDouble();
+        Employee e1 = new Employee(first, last, salary);
+
+        System.out.println("First name:" + e1.getFirst());
+        System.out.println("Last name:" + e1.getLast());
+        System.out.println("Salary:" + e1.getSalary());
     }
 
 }
 
-class Point {
+class Employee {
 
-    public int x;
-    public int y;
+    private String first;
+    private String last;
+    private double salary;
 
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Employee(String first, String last, Double salary) {
+        this.first = first;
+        this.last = last;
+        if (salary < 0) {
+            this.salary = 0;
+        } else {
+            this.salary = salary;
+
+        }
     }
 
-    public int quadrant() {
-        if (x > 0 && y > 0) {
-            return 1;
-        } else if (x < 0 && y > 0) {
-            return 2;
-        } else if (x < 0 && y < 0) {
-            return 3;
-        } else if (x > 0 && y < 0) {
-            return 4;
+    public String getFirst() {
+        return first;
+    }
+
+    public void setFirst(String first) {
+        this.first = first;
+    }
+
+    public String getLast() {
+        return last;
+    }
+
+    public void setLast(String last) {
+        this.last = last;
+    }
+
+    public double getSalary() {
+        return salary;
+
+    }
+
+    public void setSalary(double salary) {
+        if (salary < 0) {
+            this.salary = 0;
         } else {
-            return 0;
+            this.salary = salary;
         }
     }
 }
