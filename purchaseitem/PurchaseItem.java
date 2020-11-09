@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package purchaseitem;
 
-/**
- *
- * @author Aysegul
- */
-public class PurchaseItem {
+
+public abstract class PurchaseItem {
 
     private String name;
     private double unitPrice;
@@ -35,10 +28,5 @@ public class PurchaseItem {
         return unitPrice;
     }
 
-   
-    @Override
-    public String toString() {
-        return getName() + "@ " + getPrice();
-    }
+    public abstract String toString();
 }
-
