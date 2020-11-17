@@ -17,10 +17,9 @@ class Dog extends Animal {
  class Challenge {
 
 	public static void main(String args[]) {
-               
-	Animal a = new Animal();
+        Animal a = new Animal();
         a.move();
-        Dog d = new Dog();
-        d.move();          
+        a = new Dog();
+        a.move();            
 	}
 }
