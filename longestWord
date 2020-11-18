@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Challenge {
+
+    public static void main(String[] args) {
+        System.out.println("Enter a sentence:");
+        Scanner br = new Scanner(System.in);
+        String s1 = br.nextLine();
+        String longestWord = null;
+        String arr[];
+        arr = s1.split(" ");
+        int k = arr.length;
+        int max = arr[0].length();
+        int a = 0;
+        for (int i = 1; i < k; i++) {
+            if (arr[i].length() > max) {
+                max = arr[i].length();
+                a = i;
+            }
+        }
+        longestWord = arr[a];
+        System.out.println("The longest word in the sentence is:" + longestWord);
+        
+    }
+}
