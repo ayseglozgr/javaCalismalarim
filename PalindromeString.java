@@ -18,7 +18,7 @@ class Challenge {
         else
         {
             System.out.println("Entered string is not a palindrome.");
-        }
+        } 
     }
 
 }
