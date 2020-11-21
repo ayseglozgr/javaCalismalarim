@@ -1,11 +1,12 @@
+
 import java.io.*;
 import java.util.Scanner;
 
 public class statement_reverse {
 
     public static void main(String a[]) throws Exception {
-        String strarr[];    //array which will hold splitted strings of the statement
-        String st;      //contains user input statement 
+        String strarr[];   
+        String st;    
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the Statement:");
         st = br.readLine();
@@ -17,4 +18,5 @@ public class statement_reverse {
             System.out.print(strarr[i] + " ");
         }
     }
+
 }
