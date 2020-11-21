@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nypodev5_2;
+
+public class Yamuk implements Dortgen {
+
+    private Point nokta[] = new Point[4];
+
+    public Yamuk(Point nokta1, Point nokta2, Point nokta3, Point nokta4) {
+        nokta[0] = nokta1;
+        nokta[1] = nokta2;
+        nokta[2] = nokta3;
+        nokta[3] = nokta4;
+    }
+
+    public double alan() {
+        double yukseklik = nokta[0].getY() - nokta[2].getY();
+        double altTaban = nokta[3].getX() - nokta[2].getX();
+        double ustTaban = nokta[0].getX() - nokta[1].getX();
+        return (Math.abs(ustTaban) + Math.abs(altTaban)) * Math.abs(yukseklik) / 2;
+    }
+
+}
